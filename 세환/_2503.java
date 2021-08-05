@@ -19,7 +19,7 @@ public class Main {
 			String[] num = String.valueOf(i).split("");
 
 			// 조건처리 어떤식으로 하면 좋을까??..
-			if (num[0].equals(num[1]) || num[0].equals(num[2]) || num[2].equals(num[1]) || (num[0].equals("0") || num[1].equals("0") || num[2].equals("0"))) { 
+			if (checkContinue(num)) { 
 				continue;
 			}
 			for (int j = 0; j < 3; j++) {
@@ -55,5 +55,9 @@ public class Main {
 			}
 		}
 		System.out.println(result);
+	}
+	
+	public static boolean checkContinue (String [] num) {
+		return (num[0].equals(num[1]) || num[0].equals(num[2]) || num[2].equals(num[1]) || (num[0].equals("0") || num[1].equals("0") || num[2].equals("0")));
 	}
 }
