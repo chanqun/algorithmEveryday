@@ -12,11 +12,10 @@ class Solution {
 			}
 			if(a % 2 == 0) {
 				a /= 2;
-				answer++;
 			}else {
 				a = (a * 3) + 1;
-				answer++;
 			}
+            answer++;
 		}
         return answer;
     }
