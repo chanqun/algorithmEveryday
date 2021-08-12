@@ -18,7 +18,6 @@ public class Main {
 			int ballCount = 0;
 			String[] num = String.valueOf(i).split("");
 
-			// 조건처리 어떤식으로 하면 좋을까??..
 			if (checkContinue(num)) { 
 				continue;
 			}
