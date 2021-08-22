@@ -39,7 +39,7 @@ fun main() {
                 next = map[next]!!
             }
 
-            if (visit[next] == -1) {
+            if (visit[next] == 0) {
                 visit[next] = visit[now] + 1
                 queue.add(next)
             }
