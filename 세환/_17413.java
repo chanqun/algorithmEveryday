@@ -11,18 +11,14 @@ public class Main {
 		
 		String s = br.readLine();
 		boolean check = true;
-		String [] arr = new String[s.length()];
 		
 		Stack<String> stack = new Stack<>();
 		
 		String result = "";
 		
-		for (int i = 0; i < s.length(); i++) {
-			arr[i] = s.substring(i, i+1);
-		}
 		
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i].equals("<")) {
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i)=='<') {
 				check = false;
 				
 				while (!stack.isEmpty()) {
@@ -30,12 +26,12 @@ public class Main {
 				}
 				result += "<";
 			}
-			else if (arr[i].equals(">")) {
+			else if (s.charAt(i)=='>') {
 				check = true;
 				
 				result += ">";
 			}
-			else if (arr[i].equals(" ")) {
+			else if (s.charAt(i)==' ') {
 				while (!stack.isEmpty()) {
 					result += stack.pop();
 				}
@@ -43,9 +39,9 @@ public class Main {
 			}
 			else {
 				if(check) {
-					stack.push(arr[i]);
+					stack.push(String.valueOf(s.charAt(i)));
 				} else {
-					result += arr[i];
+					result += String.valueOf(s.charAt(i));
 				}
 			}
 		}
