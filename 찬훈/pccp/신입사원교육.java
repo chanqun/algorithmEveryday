@@ -11,18 +11,15 @@ class Solution {
         }
         
         for (int i=0; i<number; i++) {
-            int a = pq.peek();
-            pq.poll();
-            int b = pq.peek();
-            pq.poll();
+            int a = pq.poll();
+            int b = pq.poll();
             
             pq.add(a+b);
             pq.add(a+b);
         }
         
         while(!pq.isEmpty()) {
-            int temp = pq.peek();
-            pq.poll();
+            int temp = pq.poll();
 
             answer += temp;
         }
