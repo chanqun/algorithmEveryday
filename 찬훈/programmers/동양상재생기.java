@@ -9,22 +9,21 @@ class Solution {
     public String solution(String video_len, String pos, String op_start, String op_end, String[] commands) {
         String answer = "";
         
-        videoLen = changeTimeSringToInt(video_len);
-        posInt = changeTimeSringToInt(pos);
-        opStart = changeTimeSringToInt(op_start);
-        opEnd = changeTimeSringToInt(op_end);
+        videoLen = changeTimeStringToInt(video_len);
+        posInt = changeTimeStringToInt(pos);
+        opStart = changeTimeStringToInt(op_start);
+        opEnd = changeTimeStringToInt(op_end);
         
         for(String command: commands) {
             doCommand(command);
         }
         
         answer = makeIntToAnswer(posInt);
-        System.out.println(answer);
-        
+
         return answer;
     }
     
-    private int changeTimeSringToInt(String time) {
+    private int changeTimeStringToInt(String time) {
         String[] timeArray = time.split(":");
         
         return Integer.parseInt(timeArray[0]) * 60 + Integer.parseInt(timeArray[1]);
